@@ -1,0 +1,59 @@
+package com.bikkadIT.SpringBootJPA.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bikkadIT.SpringBootJPA.Model.User;
+import com.bikkadIT.SpringBootJPA.Repositry.UserRepository;
+
+@Service
+public class ServiceImpl implements ServiceI {
+@Autowired
+	private UserRepository userRepository;
+	@Override
+	public void saveUser(User user) {
+		
+		User save = userRepository.save(user);
+		
+	}
+	
+	@Override
+	public void saveAlluser(List<User> list) {
+	Iterable<User> saveAll = userRepository.saveAll(list);
+		
+	}
+
+	@Override
+	public User getuserById(Integer userId) {
+		User user = userRepository.findById(userId).get();
+		return user;
+	}
+
+	@Override
+	public List<User> getAllId(List<Integer> list) {
+	Iterable<User> findAllById = userRepository.findAllById(list);
+	return (List<User>) findAllById ;
+	}
+
+	@Override
+	public List<User> getAlluser() {
+		List<User> findAll = (List<User>) userRepository.findAll();
+		return findAll;
+	}
+
+	@Override
+	public boolean contactExists(Integer id) {
+		boolean existsById = userRepository.existsById(id);
+		return  existsById;
+	}
+
+	@Override
+	public long countRecords() {
+		long count = userRepository.count();
+		return count;
+	}
+	
+}	

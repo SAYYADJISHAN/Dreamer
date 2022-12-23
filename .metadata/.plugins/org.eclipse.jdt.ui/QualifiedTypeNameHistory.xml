@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.bikkadIT.SpringBootJPA.Repositry.UserRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="com.bikkadIT.SpringBootJPA.Service.ServiceImpl"/>
+    <fullyQualifiedTypeName name="com.bikkadIT.SpringBootJPA.Model.User"/>
+    <fullyQualifiedTypeName name="com.bikkadIT.SpringBootJPA.SpringBootJpaApplication"/>
+    <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

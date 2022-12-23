@@ -1,0 +1,157 @@
+package com.bikkadIT.SpringBootJPA.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.bikkadIT.SpringBootJPA.Model.User;
+import com.bikkadIT.SpringBootJPA.Repositry.UserRepository;
+
+@Service
+public class ServiceImpl implements ServiceI {
+@Autowired
+	private UserRepository userRepository;
+	@Override
+	public void saveUser(User user) {
+		
+		User save = userRepository.save(user);
+		
+	}
+	
+	@Override
+	public void saveAlluser(List<User> list) {
+	Iterable<User> saveAll = userRepository.saveAll(list);
+		
+	}
+
+	@Override
+	public User getuserById(Integer userId) {
+		User user = userRepository.findById(userId).get();
+		return user;
+	}
+
+	@Override
+	public List<User> getAllId(List<Integer> list) {
+	Iterable<User> findAllById = userRepository.findAllById(list);
+	return (List<User>) findAllById ;
+	}
+
+	@Override
+	public List<User> getAlluser() {
+		List<User> findAll = (List<User>) userRepository.findAll();
+		return findAll;
+	}
+
+	@Override
+	public boolean contactExists(Integer id) {
+		boolean existsById = userRepository.existsById(id);
+		return  existsById;
+	}
+
+	@Override
+	public long countRecords() {
+		long count = userRepository.count();
+		return count;
+	}
+
+	@Override
+	public void delete(int id) {
+		userRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public void deleteByObject(User user) {
+		userRepository.delete(user);
+		
+	}
+
+	@Override
+	public void deleteallByContact(List<Integer> list) {
+		userRepository.deleteAllById(list);
+		
+	}
+
+	@Override
+	public void deleteAllContacts() {
+	userRepository.deleteAll();
+		
+	}
+
+	@Override
+	public void UserPagination() {
+		
+		PageRequest of = PageRequest.of(0,6);
+	 Page<User> findAll= userRepository.findAll(of);
+	 System.out.println(findAll);
+	 for(User u:findAll) {
+		 System.out.println(u);
+	 }
+	
+	}
+
+//	@Override
+//	public void SortingUser() {
+//		List<User> findAll=userRepository.findAll(Sort.by("userId").descending());
+//		 for(User u:findAll) {
+//		 System.out.println(u);
+//		 }
+////		 
+//		 @Override
+//			public void SortingUser() {
+//				List<User> findAll=userRepository.findAll(Sort.by("userId").ascending());
+//				 for(User u:findAll) {
+//					 System.out.println(u);
+		
+	//}
+//	@Override
+//	public void SortingUser() {
+//		List<User> findAll=userRepository.findAll(Sort.by("userName").ascending());
+//		 for(User u:findAll) {
+//			 System.out.println(u);
+	
+//		 }
+	@Override
+	public void SortingUser() {
+		List<User> findAll=userRepository.findAll(Sort.by("userName").descending());
+		 for(User u:findAll) {
+			 System.out.println(u);
+		 }
+}
+
+	@Override
+	public User getContactByuserAge(int userAge) {
+	User user = userRepository.findByUserAge(userAge);
+		return user;
+	}
+
+	@Override
+	public User getContactByUserName(String userName) {
+		User user = userRepository.findByUserName(userName);
+		return user;
+	}
+
+	@Override
+	public User getContactByUserId(int userId) {
+		User user = userRepository.findByUserId(userId);
+		return user;
+	}
+
+	@Override
+	public List<User> getAgeGraeterthanorequal(int age) {
+	 List<User> list = userRepository.findByUserAgeGreaterThanEqual(age);
+		return list;
+	}
+
+	@Override
+	public List<User> findByAgeLessthan(int Age) {
+		List<User> list = userRepository.findByUserAgeLessThan(Age);
+		return list;
+	}
+}
+		 

@@ -1,0 +1,20 @@
+package com.bikkadIT.SpringBootJPA.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bikkadIT.SpringBootJPA.Model.User;
+import com.bikkadIT.SpringBootJPA.Repositry.UserRepository;
+
+@Service
+public class ServiceImpl implements ServiceI {
+@Autowired
+	private UserRepository userRepository;
+	@Override
+	public void saveUser(User user) {
+		
+		User save = userRepository.save(user);
+		
+	}
+	
+}	

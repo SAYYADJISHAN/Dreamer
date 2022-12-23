@@ -1,0 +1,93 @@
+package com.bikkadIT.SpringBootJPA;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.hibernate.mapping.List;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.bikkadIT.SpringBootJPA.Model.User;
+import com.bikkadIT.SpringBootJPA.Service.ServiceImpl;
+
+@SpringBootApplication
+public class SpringBootJpaApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(SpringBootJpaApplication.class, args);
+		
+		ServiceImpl bean =context.getBean(ServiceImpl.class);
+//		
+//		User user = new User();
+//		user.setUserId(4);
+//		user.setUserName("Dreamer");
+//		user.setUserAge(28);
+//		
+//		
+//		
+//		
+//		User user1 = new User();
+//		user1.setUserId(5);
+//		user1.setUserName("Zeeshan");
+//		user1.setUserAge(25);
+//		
+//		bean.saveUser(user1);
+//		
+//
+//		User user2 = new User();
+//		user2.setUserId(6);
+//		user2.setUserName("naved");
+//		user2.setUserAge(27);
+//		
+//		
+//		java.util.List<User> l = new ArrayList<>();
+//		l.add(user);
+//		l.add(user2);
+//		l.add(user1);
+//		
+//		System.out.println(l);
+//		
+//		bean.saveAlluser(l);
+//		
+		
+		
+//		User user=bean.getuserById(1);
+//		System.out.println(user);
+//		
+//		java.util.List<Integer> asList = Arrays.asList(1,2,3);
+//		java.util.List<User> allId = bean.getAllId(asList);
+//		
+//		System.out.println(allId);
+//		
+//		for( User user:allId) {
+//			System.out.println(user);
+		
+//		java.util.List<User> alluser = bean.getAlluser();
+//		
+//		System.out.println(alluser);
+//		
+//		for(User user:alluser) {
+//			System.out.println(user);
+		
+//		boolean contactExists = bean.contactExists(1);
+//		System.out.println( contactExists);
+//		
+
+		boolean contactExists = bean.contactExists(10);
+		System.out.println( contactExists);
+		
+		
+			
+			
+		
+		
+			
+			
+		}
+		
+//			
+		}
+	
+
+

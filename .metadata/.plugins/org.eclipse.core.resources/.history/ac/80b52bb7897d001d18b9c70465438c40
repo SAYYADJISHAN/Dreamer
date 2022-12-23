@@ -1,0 +1,18 @@
+package com.bikkadIT.SpringBootJPA.Service;
+
+
+import java.util.List;
+
+import com.bikkadIT.SpringBootJPA.Model.User;
+
+public interface ServiceI {
+
+	public void saveUser(User user);
+	
+	public void saveAlluser(List<User> list);
+	
+	
+	public User getuserById(Integer userId);
+     
+	public List<User> getAllId(List<Integer> list);
+}
